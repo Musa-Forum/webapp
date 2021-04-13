@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel='stylesheet' href='/static/css/style.css'>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- use FontAwesome -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">　
+    <title>MusaForum collection</title>
+  </head>
+  <body>
+     <div id='header'>
+       <h1>
+         <img src="../static/images/MusaForum.png" width="80" height="80">
+         MusaForum 名大博物館コレクション
+         <i class="fas fa-university fa-2x"></i>
+      </h1>
+    </div>
+    <div class='contents'>
+      <h1>結晶展クイズ</h1>
+      <p>問題文</p>
+      <div class="container">
+	<div class="row">
+	  <button type="button" class="btn btn-primary col-sm-5 col-md-6" onclick="location.href='./crystal_correct'">1(正解)</button>
+	  <button type="button" class="btn btn-primary col-sm-5 offset-sm-2 col-md-6 offset-md-0" onclick="location.href='./crystal_incorrect'">2(不正解)</button>
+	</div>
+	<div class="row">
+	  <button type="button" class="btn btn-primary col-sm-6 col-md-5 col-lg-6" onclick="location.href='./crystal_incorrect'">3(不正解)</button>
+	  <button type="button" class="btn btn-primary col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0" onclick="location.href='./crystal_incorrect'">4(不正解)</button>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>

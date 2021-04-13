@@ -1,4 +1,3 @@
-# coding:utf-8
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
@@ -7,14 +6,31 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route("/metacrinus", methods=["GET"])
-def get_metacrinus():
-    return render_template('metacrinus.html')
+@app.route("/test", methods=["GET"])
+def test():
+    return render_template('./test.html')
+
+@app.route("/mail", methods=["POST"])
+def mail():
+    name = request.form['exampleFormControlInput1']
+    return render_template('mail.html', \
+		message = "あなたのEmailアドレスは" + str(name) + "です。")
 
 @app.route("/crystal", methods=["GET"])
-def get_crystal():
-    return render_template('crystal.html')
+def crystal():
+    return render_template("./crystal.html")
 
+@app.route("/crystal_correct", methods=["GET"])
+def crystal_correct():
+    return render_template("./crystal_correct.html")
+
+@app.route("/crystal_incorrect", methods=["GET"])
+def crystal_incorrect():
+    return render_template("./crystal_incorrect.html")
+
+
+
+ 
 if __name__ == "__main__":
     app.debug = True
-    app.run(host='127.0.0.1', port=8080)
+    app.run(host='0.0.0.0', port=8080)
