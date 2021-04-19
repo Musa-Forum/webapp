@@ -1,37 +1,42 @@
-#header{
+.header {
     height: 90px;
-    width:100%;
-    padding: 0px 20px 0 20px;
+    width: 100%;
+    padding: 20px 20px 0 20px;
     background-color: #007bff;
     color: #fff;
-    
-  }
-
-.contents{
-  /* background: url(../images/MusaForum.png); */
-  height: 90px;
-  width:100%;
-  padding: 0px 20px 0 20px;
-  /* width: 90%;
-  height: 100%;
-  padding: 20px 20px 0 20px; */
-  /* display: flex; */
+    font-family: 'MS UI Gothic','sans-serif';
+    font-size: 35px;
 }
 
-img {
-  border-radius: 8px;
-  padding: 0px 0px 10px 0px;
+.contents {
+    font-size: 20px;
+    font-family: 'Impact','sans-serif';
 }
 
-body {
-margin: 10px;
-background-color: rgb(74, 241, 241);
+.quizheader {
+    height: 90px;
+    width: 100%;
+    padding: 20px 20px 0 20px;
+    background-color: #6b493d;
+    color: #fff;
+    font-family: 'MS UI Gothic','sans-serif';
+    font-size: 35px;
+    font-weight: bold;
 }
-  /*h1 {
-  color: rgb(248, 76, 234);
-  font-size: 28pt;
-  margin:0px;
-  }
-  p{
-  font-size:14pt;
-  } */
+
+.quizcontents {
+    font-size: 30px;
+    font-family: 'sans-serif';
+    padding: 20px 20px 0 20px;
+}
+
+.quizanswer {
+    font-size: 30px;
+    font-family: 'Impact','sans-serif';
+    padding: 20px 20px 0 20px;
+    color: red;
+}
+
+.body {
+    background-color:lightyellow;
+}
