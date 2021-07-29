@@ -35,3 +35,20 @@ background-color: rgb(74, 241, 241);
   p{
   font-size:14pt;
   } */
+
+.quizheader {
+    height: 90px;
+    width: 100%;
+    padding: 20px 20px 0 20px;
+    background-color: #6b493d;
+    color: #fff;
+    font-family: 'MS UI Gothic','sans-serif';
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.quizcontents {
+    font-size: 30px;
+    font-family: 'sans-serif';
+    padding: 20px 20px 0 20px;
+}
