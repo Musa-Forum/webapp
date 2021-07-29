@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class='quizheader'>
+  {{title}}
+</div>
+
+<br>
+
+<div class='quizcontents'>
+  <p>
+    正解です！
+    {{message}}
+  <p>
+    
+
+  <br><br>
+  
+  <center>
+    <img src={{picture}} width = "400px" height = "auto" border="4px">
+  </center>
+
+</div>
+
+{% endblock %}
