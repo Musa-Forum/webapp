@@ -40,11 +40,28 @@ def metacrinus_incorrect():
 #def get_name():
 #    return render_template('layout_quiz.html',
 #                           title="",
-#                           message="",
-#                           picture="",
-#                           choice1="",
+#                           message="問題文",
+#                           picture="シルエット画像",
+#                           choice1="選択肢",
+#                           answer1="正解か不正解かのページ",
 #                           choice2="",
-#                           choice3="")
+#                           answer2="",
+#                           choice3="",
+#                           answer3="")
+
+#@app.route("/name_correct",methods=["GET"])
+#def name_correct():
+#    return render_template('correct.html',
+#                           title="",
+#                           message="解説",
+#                           picture="キャラクター写真")
+#
+
+#@app.route("/name_incorrect",methods=["GET"])
+#def name_incorrect():
+#    return render_template('incorrect.html',
+#                           title="",
+#                           quiz="クイズのページ")
 
 ###########################################
 
