@@ -1,8 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
 
+
 <div class='quizheader'>
-  {{title}}
+  <h1>
+    {% block title %}
+    {% endblock %}
+  </h1>
 </div>
 
 <br>
@@ -10,35 +14,36 @@
 <div class='quizcontents'>
   問題
   <br>
-  {{ message }}
-
+  <p>
+    {% block quiz %}
+    {% endblock %}
+  </p>
 
   <br><br>
   
   <center>
-    <img src={{picture}} width = "400px" height = "auto" border="4px">
+    <img src={% block picture %}{% endblock %} width = "400px" height = "auto" border="4px">
   </center>
 
   <br><br>
   <div class="d-grid gap-2 col-6 mx-auto">
-    <a class="btn btn-outline-success btn-lg" onclick = {{answer1}} role = "button">{{choice1}}</a>
+    <a class="btn btn-outline-success btn-lg" onclick = {% block answer1 %}{% endblock %} role = "button">{% block choice1 %}{% endblock %}</a>
   </div>
         
   <br>
         
   <div class="d-grid gap-2 col-6 mx-auto">
-    <a class="btn btn-outline-success btn-lg" onclick = {{answer2}} role = "button">{{choice2}}</a>
+    <a class="btn btn-outline-success btn-lg" onclick = {% block answer2 %}{% endblock %} role = "button">{% block choice2 %}{% endblock %}</a>
   </div>
   
   <br>
         
   <div class="d-grid gap-2 col-6 mx-auto">
-    <a class="btn btn-outline-success btn-lg" onclick = {{answer3}} role = "button">{{choice3}}</a>
+    <a class="btn btn-outline-success btn-lg" onclick = {% block answer3 %}{% endblock %} role = "button">{% block choice3 %}{% endblock %}</a>
   </div>
   
   <br><br>
   
 </div>
-
 
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends "correct.html" %}
+
+{% block title %}
+<!-- クイズタイトル -->
+{% endblock %}
+
+{% block interpretation %}
+<!-- 解説 -->
+{% endblock %}
+
+{% block picture %}
+"/static/images/〇〇.png"<!-- キャラ画像 -->
+{% endblock %}

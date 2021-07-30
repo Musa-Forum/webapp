@@ -2,7 +2,9 @@
 {% block content %}
 
 <div class='quizheader'>
-  {{title}}
+  <h1>
+    {% block title %}{% endblock %}
+  </h1>
 </div>
 
 <br>
@@ -15,7 +17,7 @@
   </p>
 
   <div class="d-grid gap-2 col-6 mx-auto">
-    <a class="btn btn-outline-success btn-lg" onclick = {{quiz}} role = "button">もう一度挑戦！</a>
+    <a class="btn btn-outline-success btn-lg" onclick = {% block quizpage %}{% endblock %} role = "button">もう一度挑戦！</a>
   </div>
 
     
