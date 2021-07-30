@@ -1,0 +1,13 @@
+{% extends "../layout_correct.html" %}
+
+{% block title %}
+ウミユリクイズ
+{% endblock %}
+
+{% block interpretation %}
+ウミユリは約500,000,000年前(オルドビス紀)に出現したとされています。当時の海には他にまっすぐ伸びた殻が特徴的なチョッカクガイや、顎や胸びれの未発達な魚、アランダスピスなど生息していており、無脊椎動物と脊椎動物がともに多様化していった時期として知られています。
+{% endblock %}
+
+{% block picture %}
+"/static/images/1_umiyurikun.png"
+{% endblock %}

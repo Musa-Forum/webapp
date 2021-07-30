@@ -1,4 +1,4 @@
-{% extends "incorrect.html" %}
+{% extends "../layout_incorrect.html" %}
 
 {% block title %}
 ウミユリクイズ

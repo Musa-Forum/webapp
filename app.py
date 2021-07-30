@@ -10,15 +10,15 @@ def index():
 #metacrinus
 @app.route("/metacrinus", methods=["GET"])
 def metacrinus():
-    return render_template('metacrinus.html')
+    return render_template('/metacrinus/metacrinus.html')
 
 @app.route("/metacrinus_correct",methods=["GET"])
 def metacrinus_correct():
-    return render_template('metacrinus_correct.html')
+    return render_template('/metacrinus/metacrinus_correct.html')
 
 @app.route("/metacrinus_incorrect",methods=["GET"])
 def metacrinus_incorrect():
-    return render_template('metacrinus_incorrect.html')
+    return render_template('/metacrinus/metacrinus_incorrect.html')
 
 #snowcrystal
 @app.route("/snowcrystal", methods=["GET"])
