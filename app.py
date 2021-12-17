@@ -6,7 +6,7 @@ app = FastAPI()
 @app.put("/authorization/{emailad}")
 #@app.get("../webapp_quiz/webapp/")
 def authorization():
-    return permission(emailad)
+    return permission(emailad,row)
 
 
 if __name__ == "__main__":
