@@ -3,9 +3,9 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.put("/authorization/{emailad}")
+@app.get("/authorization/")
 #@app.get("../webapp_quiz/webapp/")
-def authorization():
+async def read_item(emailad:str, row:str):
     return permission(emailad,row)
 
 
