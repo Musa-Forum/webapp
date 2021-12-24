@@ -12,7 +12,7 @@ BLOCK_URL = "https://www.notion.so/5a2a9358771247f686d2cf5de9ff2e66?v=8673d07961
 
 collectionlist = ["球状コンクリーション", "縞状鉄鉱層", "ヒスイ", "ラピスラズリ","ウミユリ","放散虫","アノマロカリス","青色LEDのもと：GaN結晶","タンパク質の結晶化の原理","X線で結晶の構造が分かる！","雪の結晶","カニ"]
 
-#emailadだけを引数にしてそこからどこまで権限付与されているか調べてrow決めるように書き換える
+
 
 def permission(emailad,row):
     # Obtain the `token_v2'value by inspecting your browser cookies on a logged-in (non-guest)
