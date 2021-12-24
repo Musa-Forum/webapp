@@ -6,8 +6,8 @@ app = FastAPI()
 @app.get("/authorization/")
 #@app.get("../webapp_quiz/webapp/")
 async def read_item(emailad:str, row:str):
-    return permission(emailad,row)
-
+    permission(emailad,row)
+    return{"ping":"pong"}
 
 if __name__ == "__main__":
     app.debug = True
