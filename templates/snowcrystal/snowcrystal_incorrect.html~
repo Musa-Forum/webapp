@@ -1,9 +1,0 @@
-{% extends "incorrect.html" %}
-
-{% block title %}
-雪の結晶クイズ
-{% endblock %}
-
-{% block quizpage %}
-"location.href='./snowcrystal'"<!-- metacrius など名前（問題文のページ） -->
-{% endblock %}
