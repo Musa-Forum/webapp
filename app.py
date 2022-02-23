@@ -1,12 +1,13 @@
 import uvicorn
 from fastapi import FastAPI
+import authorization
 
 app = FastAPI()
 
 @app.get("/authorization")
 #@app.get("../webapp_quiz/webapp/")
 async def read_item(emailad:str, row:str):
-    permission(emailad,row)
+    authorization.permission(emailad,row)
     return{"ping":"pong"}
 
 if __name__ == "__main__":

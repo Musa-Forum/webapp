@@ -69,7 +69,7 @@ def permission(emailad,row):
         break
         
     # append the user permissions to the local cached dictionary object
-    ## □append で追記されるので、もとの権限はそのまま残ってしまう→配列内で旧データの削除必要か？
+    # append で追記されるので、もとの権限はそのまま残ってしまう→配列内で旧データの削除必要か？
     
     # share to web をオフにしていないと、permissionが取得できない
     
