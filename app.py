@@ -3,7 +3,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/authorization/")
+@app.get("/authorization")
 #@app.get("../webapp_quiz/webapp/")
 async def read_item(emailad:str, row:str):
     permission(emailad,row)
