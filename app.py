@@ -5,7 +5,6 @@ import authorization
 app = FastAPI()
 
 @app.get("/authorization")
-#@app.get("../webapp_quiz/webapp/")
 async def read_item(emailad:str, row:str):
     authorization.permission(emailad,row)
     return{"ping":"pong"}
@@ -13,4 +12,5 @@ async def read_item(emailad:str, row:str):
 if __name__ == "__main__":
     app.debug = True
     #app.run(host='127.0.0.1', port=8080)
-    uvicorn.run(app)
+    #uvicorn.run(app)
+    uvicorn main:app --host=0.0.0.0 --port=${PORT:-5000}
