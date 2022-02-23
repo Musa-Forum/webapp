@@ -54,7 +54,7 @@ def permission(emailad,row):
 
     #コレクション
     #for row in collectionlist:
-    sample_text = "%s" % collectionlist[row]
+    sample_text = "%s" % row
     permission_row_ = cv.collection.get_rows(search=sample_text) #権限を与える行を選択 (ブロックの中で)
     permission_row= permission_row_[0]    
 
