@@ -66,7 +66,7 @@ def permission(emailad,row):
 
     if(uid_from_email['value']['id'] not in col):
         permission_row.get()['permissions'].append(user_permissions_dict)
-        break
+        #break
         
     # append the user permissions to the local cached dictionary object
     # append で追記されるので、もとの権限はそのまま残ってしまう→配列内で旧データの削除必要か？
