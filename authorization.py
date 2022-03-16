@@ -2,12 +2,18 @@ import os
 import json
 from notion.client import NotionClient
 from notion.block import *
-TOKEN_V2 = "5b1c9c57c88f3762e33bc5d15f8488b48360feb113af61facbd99c5f916ed8af1fef5c9a9592bb6787436a8c4aa564559902f8e7c989e50eba5fa9c840df1112794e25e0ab31d8f99bc4e8b13300"
-# os.environ["TOKEN_V2"]
-WORKSPACE_URL = "https://www.notion.so/MusaForum-TOP-39d9909ed59d4e129c6b1eccb87627d5"
-# os.environ["WORKSPACE_URL"]
-BLOCK_URL = "https://www.notion.so/5a2a9358771247f686d2cf5de9ff2e66?v=8673d0796123493181d4ab41e220822d"
-# os.environ["BLOCK_URL"]
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
+
+TOKEN_V2 = os.getenv("TOKEN_V2")
+WORKSPACE_URL = os.getenv("WORKSPACE_URL")
+BLOCK_URL = os.getenv("BLOCK_URL")
+#os.environ["TOKEN_V2"]
+#WORKSPACE_URL = "https://www.notion.so/MusaForum-TOP-39d9909ed59d4e129c6b1eccb87627d5"
+#os.environ["WORKSPACE_URL"]
+#BLOCK_URL = "https://www.notion.so/5a2a9358771247f686d2cf5de9ff2e66?v=8673d0796123493181d4ab41e220822d"
+#os.environ["BLOCK_URL"]
 
 
 collectionlist = ["球状コンクリーション", "縞状鉄鉱層", "ヒスイ", "ラピスラズリ","ウミユリ","放散虫","アノマロカリス","青色LEDのもと：GaN結晶","タンパク質の結晶化の原理","X線で結晶の構造が分かる！","雪の結晶","カニ"]
@@ -39,8 +45,14 @@ def permission(emailad,row):
     #全体ページ
     pagenum = len(page.get()['permissions'])
     pageid = []
+    #print(page.get()['permissions'])
+    #print(page.get()['permissions'][0]['user_id'])
+    #print(pagenum)
+    #pageuser=page.get()['permissions']
+    #print(pageuser)
     for i in range(pagenum):
-        pageid.append(page.get()['permissions'][i]['user_id'])
+        if(page.get()['permissions'][i]['type']=='user_permission'):
+                pageid.append(page.get()['permissions'][i]['user_id'])
     if(uid_from_email['value']['id'] not in pageid):
         page.get()['permissions'].append(user_permissions_dict)
 
@@ -48,25 +60,31 @@ def permission(emailad,row):
     page2num=len(page2.get()['permissions'])
     page2id = []
     for i in range(page2num):
-        page2id.append(page2.get()['permissions'][i]['user_id'])
+        if(page2.get()['permissions'][i]['type']=='user_permission'):
+            page2id.append(page2.get()['permissions'][i]['user_id'])
     if(uid_from_email['value']['id'] not in page2id):
         page2.get()['permissions'].append(user_permissions_dict)
 
     #コレクション
     #for row in collectionlist:
     sample_text = "%s" % row
+    print(sample_text)
     permission_row_ = cv.collection.get_rows(search=sample_text) #権限を与える行を選択 (ブロックの中で)
-    permission_row= permission_row_[0]    
+    permission_row= permission_row_[0]  
 
     num = len(permission_row.get()['permissions'])
     col = []
     for i in range(num):
         if(permission_row.get()['permissions'][i]['type']=='user_permission'):
             col.append(permission_row.get()['permissions'][i]['user_id'])
-
+    print("col1")
+    print(col)
     if(uid_from_email['value']['id'] not in col):
         permission_row.get()['permissions'].append(user_permissions_dict)
         #break
+
+    print("col2")
+    print(col)
         
     # append the user permissions to the local cached dictionary object
     # append で追記されるので、もとの権限はそのまま残ってしまう→配列内で旧データの削除必要か？
@@ -83,3 +101,9 @@ def permission(emailad,row):
     #     'body': json.dumps('Hello from Lambda!')
     # }
 
+
+
+    
+    #削除するとき
+    #par_list = permission_row.get()['permissions']
+    #par_list.remove(permission_row.get()["permissions"][8])
