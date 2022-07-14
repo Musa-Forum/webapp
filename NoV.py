@@ -16,7 +16,7 @@ def receive_get():
         email = str(name)
         email_format = "{}"
         FMTemail = email_format.format(email)
-        url = "デプロイする?new_email={}"
+        url = "https://script.google.com/macros/s/AKfycbwKwib2ecgzkCrdbZP2zvodJxuL3oG2eh5aNpouQ6PX7sFHFCBt-ihEt-daLmnRbxP4/exec?new_email={}"
         url = url.format(FMTemail)
         url = requests.get(url)
         text = url.text
