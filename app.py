@@ -19,7 +19,7 @@ def index():
             url = url.format(FMTemail)
             url = requests.get(url)
             text = url.text
-        return render_template('quiztop.html', email = email)
+        return render_template('quiztop.html', email = email,text=text)
 
 #metacrinus
 @app.route("/metacrinus", methods=["GET"])
