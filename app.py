@@ -15,7 +15,7 @@ def index():
         else:
             email_format = "{}"
             FMTemail = email_format.format(email)
-            url = "https://script.google.com/macros/s/AKfycbwsnk7YgV96qmM5dSklLDoX3BM_xzaPmX_0Teqdi_0gCYmkuKARI5JQFycL3BXkkZC8/exec?new_email={}"
+            url = "https://script.google.com/macros/s/AKfycbwKzJR0nDmH5e9367XC8NMpBEecLGiZC9VDRkL41tpITakybzqfVTnQwyE9Z0PuFQ8H/exec?new_email={}"
             url = url.format(FMTemail)
             url = requests.get(url)
             text = url.text
