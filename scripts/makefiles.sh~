@@ -1,0 +1,19 @@
+#!/bin/sh
+
+usage="Usage: $0 english_name japanese_name"
+if [ $# -ne 2]; then
+    echo $usage
+    exit -1
+fi
+
+english_name=$1
+japanese_name=$2
+
+cd ../templates
+
+mkdir $english_name
+touch $english_name.html
+touch $(english_name)_correct.html
+touch $(english_name)_incorrect.html
+
+

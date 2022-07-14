@@ -2,10 +2,14 @@
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
- 
-@app.route('/')
+
+@app.route('/', methods=['GET','POST'])
 def index():
-    return render_template('index.html')
+    if request.method == 'GET':
+        return render_template('index.html')
+    if request.method == 'POST':
+        email = request.form['email']
+        return render_template('quiztop.html', email = email)
 
 #metacrinus
 @app.route("/metacrinus", methods=["GET"])
@@ -23,15 +27,55 @@ def metacrinus_incorrect():
 #snowcrystal
 @app.route("/snowcrystal", methods=["GET"])
 def snowcrystal():
-    return render_template('snowcrystal.html')
+    return render_template('/snowcrystal/snowcrystal.html')
 
 @app.route("/snowcrystal_correct",methods=["GET"])
 def snowcrystal_correct():
-    return render_template('snowcrystal_correct.html')
+    return render_template('snowcrystal/snowcrystal_correct.html')
 
 @app.route("/snowcrystal_incorrect",methods=["GET"])
 def snowcrystal_incorrect():
-    return render_template('snowcrystal_incorrect.html')
+    return render_template('snowcrystal/snowcrystal_incorrect.html')
+
+#concretion
+@app.route("/concretion",methods=["GET"])
+def concretion():
+    return render_template('/concretion/concretion.html')
+
+@app.route("/concretion_correct",methods=["GET"])
+def concretion_correct():
+    return render_template('/concretion/concretion_correct.html')
+
+@app.route("/concretion_incorrect",methods=["GET"])
+def concretion_incorrect():
+    return render_template('/concretion/concretion_incorrect.html')
+
+#tetsuo
+@app.route("/tetsuo",methods=["GET"])
+def tetsuo():
+    return render_template('/tetsuo/tetsuo.html')
+
+@app.route("/tetsuo_correct",methods=["GET"])
+def tetsuo_correct():
+    return render_template('/tetsuo/tetsuo_correct.html')
+
+@app.route("/tetsuo_incorrect",methods=["GET"])
+def tetsuo_incorrect():
+    return render_template('/tetsuo/tetsuo_incorrect.html')
+
+#kuma
+@app.route("/kuma",methods=["GET"])
+def kuma():
+    return render_template('/kuma/kuma.html')
+
+@app.route("/kuma_correct",methods=["GET"])
+def kuma_correct():
+    return render_template('/kuma/kuma_correct.html')
+
+@app.route("/kuma_incorrect",methods=["GET"])
+def kuma_incorrect():
+    return render_template('/kuma/kuma_incorrect.html')
+
 
 #############クイズテンプレート##############
 
@@ -48,9 +92,6 @@ def snowcrystal_incorrect():
 #    return render_template('name_incorrect.html')
 ###########################################
 
-@app.route("/crystal", methods=["GET"])
-def get_crystal():
-    return render_template('crystal.html')
 
 if __name__ == "__main__":
     app.debug = True

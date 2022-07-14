@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class='contents'>
+  <p>
+    アンケートへのご回答ありがとうございます！
+    来館しご回答いただくことに１つ、クイズが追加されていきます！
+    ぜひお楽しみください。
+  </p>
+
+  #前ページからメアドを受け取り、gasから来館回数を参照する。
+  <p>メアド：{{ email }}</p>
+</div>
+<div class="d-grid gap-2 col-6 mx-auto">
+  <button type="button" class="btn btn-primary" onclick="location.href='metacrinus'">ウミユリ</button>
+  <button type="button" class="btn btn-primary" onclick="location.href='snowcrystal'">雪の結晶</button>
+  <button type="button" class="btn btn-primary" onclick="location.href='concretion'">球状コンクリーション</button>
+  <button type="button" class="btn btn-primary" onclick="location.href='tetsuo'">縞状鉄鉱層</button>
+  <button type="button" class="btn btn-primary" onclick="location.href='kuma'">木彫り熊</button>
+  　</div>
+<div class='contents'>
+  <a href="https://www.notion.so/MusaForum-39d9909ed59d4e129c6b1eccb87627d5">MusaForum (展示物コレクション)</a>
+</div>
+{% endblock %}

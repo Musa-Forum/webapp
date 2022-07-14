@@ -1,0 +1,22 @@
+import openpyxl
+import sys
+
+args = sys.argv
+# ブックを取得
+book = openpyxl.load_workbook("../../../../../Musaforum/展示コレクション.xlsx")
+# シートを取得 
+sheet = book['ミラー_コレクション一 74008042a74b4fd487b']
+
+number = int(args[1])
+
+if __name__ == '__main__':
+    # セルを取得
+    quiz = sheet['C%d' % (number+1)].value
+    choice1 = sheet['D%d' % (number+1)].value
+    choice2 = sheet['E%d' % (number+1)].value
+    choice3 = sheet['F%d' % (number+1)].value
+    answer = sheet['G%d' % (number+1)].value
+    row = [quiz,choice1,choice2,choice3,answer]
+    row = [str(i) for i in row]
+    sys.stdout.write(",".join(row))
+

@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class='contents'>
-  <p>登録済みのメールアドレスを入力し、ボタンを押してください！</p>
+  <h1>ログイン</h1>
+  <p>googleフォームと同じメールアドレスを入力してください。</p>
 </div>
-<div class="mb-3 col-6 mx-auto">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-<div class="d-grid gap-2 col-6 mx-auto">
-  <button type="button" class="btn btn-primary" onclick="location.href='metacrinus'">ウミユリ</button>
-  <button type="button" class="btn btn-primary" onclick="location.href='snowcrystal'">雪の結晶</button>
-  　</div>
-<div class='contents'>
-  <a href="https://www.notion.so/MusaForum-39d9909ed59d4e129c6b1eccb87627d5">MusaForum (展示物コレクション)</a>
-</div>
+<form action="/" method="post">
+  <div class="mb-3 col-6 mx-auto">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+  </div>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button type="submit" class="btn btn-primary">ログイン</button>
+  </div>
+</form>
+
 {% endblock %}
