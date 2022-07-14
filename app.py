@@ -1,5 +1,6 @@
 # coding:utf-8
 from flask import Flask, request, render_template
+import requests
 
 app = Flask(__name__)
 
@@ -9,6 +10,15 @@ def index():
         return render_template('index.html')
     if request.method == 'POST':
         email = request.form['email']
+        if len(email) == 0:
+            return "アドレスが未入力です"
+        else:
+            email_format = "{}"
+            FMTemail = email_format.format(email)
+            url = "https://script.google.com/macros/s/AKfycbwKwib2ecgzkCrdbZP2zvodJxuL3oG2eh5aNpouQ6PX7sFHFCBt-ihEt-daLmnRbxP4/exec?new_email={}"
+            url = url.format(FMTemail)
+            url = requests.get(url)
+            text = url.text
         return render_template('quiztop.html', email = email)
 
 #metacrinus
