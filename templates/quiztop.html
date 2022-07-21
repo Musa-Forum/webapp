@@ -12,11 +12,29 @@
   <p>来館回数：{{ text }}回</p>
 </div>
 <div class="d-grid gap-2 col-6 mx-auto">
-  <button type="button" class="btn btn-primary" onclick="location.href='metacrinus'">ウミユリ</button>
-  <button type="button" class="btn btn-primary" onclick="location.href='snowcrystal'">雪の結晶</button>
-  <button type="button" class="btn btn-primary" onclick="location.href='concretion'">球状コンクリーション</button>
-  <button type="button" class="btn btn-primary" onclick="location.href='tetsuo'">縞状鉄鉱層</button>
-  <button type="button" class="btn btn-primary" onclick="location.href='kuma'">木彫り熊</button>
+  <script>
+    <button type="button" class="btn btn-primary" onclick="location.href='metacrinus'">ウミユリ</button>
+    if (text>=1){
+	    <button type="button" class="btn btn-primary" onclick="location.href='snowcrystal'">雪の結晶</button>
+    }else{
+	    <button type="button" class="btn btn-primary" onclick="location.href='snowcrystal'" disabled>雪の結晶</button>
+    }
+    if (text>=2){
+	    <button type="button" class="btn btn-primary" onclick="location.href='concretion'">球状コンクリーション</button>
+    }else{
+	    <button type="button" class="btn btn-primary" onclick="location.href='concretion'" disabled>球状コンクリーション</button>
+    }
+    if (text>=3){
+	    <button type="button" class="btn btn-primary" onclick="location.href='tetsuo'">縞状鉄鉱層</button>
+    }else{
+	    <button type="button" class="btn btn-primary" onclick="location.href='tetsuo'" disabled>縞状鉄鉱層</button>
+    }
+    if (text>=4){
+	    <button type="button" class="btn btn-primary" onclick="location.href='kuma'">木彫り熊</button>
+    }else{
+	    <button type="button" class="btn btn-primary" onclick="location.href='kuma'" disabled>木彫り熊</button>
+    }
+    </script>
   　</div>
 <div class='contents'>
   <a href="https://www.notion.so/MusaForum-39d9909ed59d4e129c6b1eccb87627d5">MusaForum (展示物コレクション)</a>
